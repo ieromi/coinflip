@@ -98,7 +98,7 @@ def send_transaction(sender_pk, side: int, amount: int):
         tx_data = w3.eth.wait_for_transaction_receipt(tx_hash, timeout=200)
 
         if tx_data['status'] == 1:
-            return f"Transaction success, tx_hash: 0x{tx_data['transactionHash'].hex()}"
+            return f"Transaction success, tx_hash: {tx_data['transactionHash'].hex()}"
         else:
             raise Exception
     except Exception as e:
